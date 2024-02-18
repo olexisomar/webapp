@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/ym53tr5q/repositories/cryptovigBot
+    - export DEPLOYPATH=/home/ym53tr5q/public_html/cryptovigBot
     - /bin/cp -R * $DEPLOYPATH
     - /usr/local/bin/npm install --production --prefix $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/logs
