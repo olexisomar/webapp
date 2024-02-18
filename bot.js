@@ -1,7 +1,12 @@
 const TelegramBot = require('node-telegram-bot-api');
 
-//const token = '6761762146:AAF_bMgYW12Uj_SGhrr8oqKBox92T19d2v8'; // Replace with your actual token
-const token = '6307049117:AAHNhjftMEWVVw1XmiH6OlSBT9VLcRJnNx0'; // Replace with your actual token
+// Read the token from the environment variable
+const token = process.env.TELEGRAM_BOT_TOKEN;
+// Check if the token is defined
+if (!token) {
+    console.error('Telegram bot token is not defined. Make sure to set the TELEGRAM_BOT_TOKEN environment variable.');
+    process.exit(1); // Exit the process if the token is not defined
+}
 const bot = new TelegramBot(token, { polling: true });
 
 const headerImage = 'https://wordpress-949276-4097976.cloudwaysapps.com/wp-content/uploads/2024/02/376X200-sports-10.webp';
